@@ -1,4 +1,3 @@
 This is the repository for project SHA-256 with Clock_multiplexing. 
-The said project is expected to be taped out in GF180nm MPW-0
-There are gds files of Sky180 nm present as well which was done for experimental purposes. 
+The said project is expected to be taped out in GF180nm MPW-0 
 The credits for the soft IPs used are given in the appropriate files.
