@@ -1,18 +1,22 @@
-module top_tukka_proj (clk1,clk2,reset_n,sel_clk2,cs,we,address,write_data,read_data,error);
-
-input    clk1;      // Clock 1 supposed to be faster
-input    clk2;      // Clock 2  supposed to be slower
-input    reset_n;   // System reset
-input    sel_clk2;  // Select clock2 when high
+module top_tukka_proj (
+`ifdef USE_POWER_PINS
+    inout vdd,		// User area 5.0V supply
+    inout vss,		// User area ground
+`endif
+input    clk1,      // Clock 1 supposed to be faster
+input    clk2,      // Clock 2  supposed to be slower
+input    reset_n,   // System reset
+input    sel_clk2,  // Select clock2 when high
 //for SHA
 // Control.
-input wire cs;
-input wire we;
+input wire cs,
+input wire we,
 // Data ports.
-input wire  [7 : 0]  address;
-input wire  [31 : 0] write_data;
-output wire [31 : 0] read_data;
-output wire error;
+input wire  [7 : 0]  address,
+input wire  [31 : 0] write_data,
+output wire [31 : 0] read_data,
+output wire error,
+);
 //output clock
 wire clk1or2;    // Selected clock
 

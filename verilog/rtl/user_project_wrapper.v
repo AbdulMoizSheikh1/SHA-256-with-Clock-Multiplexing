@@ -79,18 +79,18 @@ top_tukka_proj mprj (
     .clk1(wb_clk_i),
     .clk2(user_clock2),
     .reset_n(wb_rst_i),
-    .sel_clk2(io_in[0]),
+    .sel_clk2(io_in[4]),
     .cs(wbs_stb_i),
     .we(wbs_we_i),
-    .address(wbs_adr_i[7:0]),
+    .address(wbs_adr_i[23:16]),
     .write_data(wbs_dat_i),
-    .read_data(wbs_dat_o[31:0]),
-    .error(wbs_dat_o)
+    .read_data(wbs_dat_o),
+    .error(wbs_ack_o)
 );
 
 endmodule	// user_project_wrapper
 
-module top_tukka_proj (
+/*module top_tukka_proj (
 `ifdef USE_POWER_PINS
     inout vdd,		// User area 5.0V supply
     inout vss,		// User area ground
@@ -109,6 +109,6 @@ input wire  [31 : 0] write_data,
 output wire [31 : 0] read_data,
 output wire error,
 );
-endmodule
+endmodule*/
 
 `default_nettype wire
